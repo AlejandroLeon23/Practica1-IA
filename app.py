@@ -34,9 +34,18 @@ def main():
         )
 
     for profundidad, arbol, _, _ in resultados:
-        if profundidad in (2, None):
-            print(f"\nREGLAS: max_depth={profundidad}")
-            print(export_text(arbol, feature_names=list(wine.feature_names)))
+        print(f"\nREGLAS: max_depth={profundidad}")
+        print(export_text(arbol, feature_names=list(wine.feature_names),
+                          max_depth=arbol.get_depth()))
+
+    arbol_sin_limite = resultados[-1][1]
+    print(f"Profundidad máxima observada sin límite: {arbol_sin_limite.get_depth()}")
+    print("Importancia de las variables en el árbol sin límite:")
+    for nombre, importancia in sorted(
+        zip(wine.feature_names, arbol_sin_limite.feature_importances_),
+        key=lambda elemento: elemento[1], reverse=True,
+    ):
+        print(f"  {nombre}: {importancia:.2%}")
 
     maxima = max(resultado[3] for resultado in resultados)
     mejores = [str(profundidad) for profundidad, _, _, p in resultados if p == maxima]

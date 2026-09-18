@@ -1,0 +1,169 @@
+Muestras: 178 | Variables: 13
+Entrenamiento: 142 | Prueba: 36
+Profundidad solicitada | Profundidad real | Hojas | Entrenamiento | Prueba
+                    1 |                1 |     2 |       66.20% | 58.33%
+                    2 |                2 |     4 |       93.66% | 86.11%
+                    3 |                3 |     7 |       99.30% | 94.44%
+                    4 |                4 |     8 |      100.00% | 94.44%
+                    5 |                4 |     8 |      100.00% | 94.44%
+                    6 |                4 |     8 |      100.00% | 94.44%
+                 None |                4 |     8 |      100.00% | 94.44%
+
+REGLAS: max_depth=1
+|--- color_intensity <= 3.82
+|   |--- class: 1
+|--- color_intensity >  3.82
+|   |--- class: 0
+
+
+REGLAS: max_depth=2
+|--- color_intensity <= 3.82
+|   |--- ash <= 3.00
+|   |   |--- class: 1
+|   |--- ash >  3.00
+|   |   |--- class: 0
+|--- color_intensity >  3.82
+|   |--- flavanoids <= 1.58
+|   |   |--- class: 2
+|   |--- flavanoids >  1.58
+|   |   |--- class: 0
+
+
+REGLAS: max_depth=3
+|--- color_intensity <= 3.82
+|   |--- ash <= 3.00
+|   |   |--- od280/od315_of_diluted_wines <= 3.73
+|   |   |   |--- class: 1
+|   |   |--- od280/od315_of_diluted_wines >  3.73
+|   |   |   |--- class: 0
+|   |--- ash >  3.00
+|   |   |--- class: 0
+|--- color_intensity >  3.82
+|   |--- flavanoids <= 1.58
+|   |   |--- alcalinity_of_ash <= 17.65
+|   |   |   |--- class: 1
+|   |   |--- alcalinity_of_ash >  17.65
+|   |   |   |--- class: 2
+|   |--- flavanoids >  1.58
+|   |   |--- proline <= 724.50
+|   |   |   |--- class: 1
+|   |   |--- proline >  724.50
+|   |   |   |--- class: 0
+
+
+REGLAS: max_depth=4
+|--- color_intensity <= 3.82
+|   |--- ash <= 3.00
+|   |   |--- od280/od315_of_diluted_wines <= 3.73
+|   |   |   |--- class: 1
+|   |   |--- od280/od315_of_diluted_wines >  3.73
+|   |   |   |--- class: 0
+|   |--- ash >  3.00
+|   |   |--- class: 0
+|--- color_intensity >  3.82
+|   |--- flavanoids <= 1.58
+|   |   |--- alcalinity_of_ash <= 17.65
+|   |   |   |--- class: 1
+|   |   |--- alcalinity_of_ash >  17.65
+|   |   |   |--- class: 2
+|   |--- flavanoids >  1.58
+|   |   |--- proline <= 724.50
+|   |   |   |--- malic_acid <= 3.92
+|   |   |   |   |--- class: 1
+|   |   |   |--- malic_acid >  3.92
+|   |   |   |   |--- class: 0
+|   |   |--- proline >  724.50
+|   |   |   |--- class: 0
+
+
+REGLAS: max_depth=5
+|--- color_intensity <= 3.82
+|   |--- ash <= 3.00
+|   |   |--- od280/od315_of_diluted_wines <= 3.73
+|   |   |   |--- class: 1
+|   |   |--- od280/od315_of_diluted_wines >  3.73
+|   |   |   |--- class: 0
+|   |--- ash >  3.00
+|   |   |--- class: 0
+|--- color_intensity >  3.82
+|   |--- flavanoids <= 1.58
+|   |   |--- alcalinity_of_ash <= 17.65
+|   |   |   |--- class: 1
+|   |   |--- alcalinity_of_ash >  17.65
+|   |   |   |--- class: 2
+|   |--- flavanoids >  1.58
+|   |   |--- proline <= 724.50
+|   |   |   |--- malic_acid <= 3.92
+|   |   |   |   |--- class: 1
+|   |   |   |--- malic_acid >  3.92
+|   |   |   |   |--- class: 0
+|   |   |--- proline >  724.50
+|   |   |   |--- class: 0
+
+
+REGLAS: max_depth=6
+|--- color_intensity <= 3.82
+|   |--- ash <= 3.00
+|   |   |--- od280/od315_of_diluted_wines <= 3.73
+|   |   |   |--- class: 1
+|   |   |--- od280/od315_of_diluted_wines >  3.73
+|   |   |   |--- class: 0
+|   |--- ash >  3.00
+|   |   |--- class: 0
+|--- color_intensity >  3.82
+|   |--- flavanoids <= 1.58
+|   |   |--- alcalinity_of_ash <= 17.65
+|   |   |   |--- class: 1
+|   |   |--- alcalinity_of_ash >  17.65
+|   |   |   |--- class: 2
+|   |--- flavanoids >  1.58
+|   |   |--- proline <= 724.50
+|   |   |   |--- malic_acid <= 3.92
+|   |   |   |   |--- class: 1
+|   |   |   |--- malic_acid >  3.92
+|   |   |   |   |--- class: 0
+|   |   |--- proline >  724.50
+|   |   |   |--- class: 0
+
+
+REGLAS: max_depth=None
+|--- color_intensity <= 3.82
+|   |--- ash <= 3.00
+|   |   |--- od280/od315_of_diluted_wines <= 3.73
+|   |   |   |--- class: 1
+|   |   |--- od280/od315_of_diluted_wines >  3.73
+|   |   |   |--- class: 0
+|   |--- ash >  3.00
+|   |   |--- class: 0
+|--- color_intensity >  3.82
+|   |--- flavanoids <= 1.58
+|   |   |--- alcalinity_of_ash <= 17.65
+|   |   |   |--- class: 1
+|   |   |--- alcalinity_of_ash >  17.65
+|   |   |   |--- class: 2
+|   |--- flavanoids >  1.58
+|   |   |--- proline <= 724.50
+|   |   |   |--- malic_acid <= 3.92
+|   |   |   |   |--- class: 1
+|   |   |   |--- malic_acid >  3.92
+|   |   |   |   |--- class: 0
+|   |   |--- proline >  724.50
+|   |   |   |--- class: 0
+
+Profundidad máxima observada sin límite: 4
+Importancia de las variables en el árbol sin límite:
+  flavanoids: 40.81%
+  color_intensity: 40.02%
+  proline: 11.10%
+  od280/od315_of_diluted_wines: 2.10%
+  alcalinity_of_ash: 2.09%
+  ash: 2.02%
+  malic_acid: 1.87%
+  alcohol: 0.00%
+  magnesium: 0.00%
+  total_phenols: 0.00%
+  nonflavanoid_phenols: 0.00%
+  proanthocyanins: 0.00%
+  hue: 0.00%
+Máxima precisión observada en prueba: 94.44% (max_depth=3, 4, 5, 6, None)
+Nota: elegir el modelo usando estos mismos datos de prueba sesga la comparación; para seleccionar un modelo formalmente se requiere validación separada.
